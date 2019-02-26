@@ -1,0 +1,7 @@
+body.pp {
+    margin: 0;
+    width: 100%;
+    height: 1000px;
+    background: url('../assets/personalProjectsBackgroundImage.jpg');
+    background-size: cover;
+}

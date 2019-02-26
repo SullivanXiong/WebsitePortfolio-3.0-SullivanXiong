@@ -1,0 +1,7 @@
+body.coms101 {
+    margin: 0;
+    width: 100%;
+    height: 1000px;
+    background: url('../assets/coms101BackgroundImage.jpg');
+    background-size: cover;
+}
