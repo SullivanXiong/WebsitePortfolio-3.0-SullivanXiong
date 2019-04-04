@@ -15,6 +15,7 @@ nav-bar {
     position: fixed;
     width: 100%;
     border-bottom: 1px solid #ffffff;
+    top: 0;
 }
 
 .name-and-description {

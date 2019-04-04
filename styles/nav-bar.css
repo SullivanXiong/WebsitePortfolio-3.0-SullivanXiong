@@ -23,15 +23,15 @@
     color: rgba(125, 125, 125, 0.75);
 }
 
-.nav-bar .li .left {
+.nav-bar .li .leftNav {
     border-right: 5px;
 }
 
-.nav-bar .li .right {
+.nav-bar .li .rightNav {
     border-left: 5px;
 }
 
 .nav-bar .home-img {
-    height: 60px;
+    height: 7vh;
     width: 90px;
 }
