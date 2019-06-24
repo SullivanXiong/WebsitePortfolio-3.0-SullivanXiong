@@ -17,12 +17,16 @@ CSS3:
     resume.css
     coms101E-Portfolio.css
     eng134E-Portfoloio.css
+    left-nav-bar.css
+    peerReview.css
+    prewriteWorksheets.css
 
 Javascript:
     index.js
     coms101E-Portfolio.js
     eng134E-Portfoloio.js
-
+    left-nav-bar.js
+    nav-bar.js
 
 Others:
     resume.pdf

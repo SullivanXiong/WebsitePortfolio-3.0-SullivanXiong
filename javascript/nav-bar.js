@@ -5,13 +5,13 @@ class NavBar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <nav class="nav-bar">
-                <a class="leftNav" href="/aboutMe"><div class="nav-bar li" id="aboutMe">ABOUT ME</div></a>
-                <a class="leftNav" href="/personalProjects"><div class="nav-bar li" id="personalProjects">PERSONAL PROJECTS</div></a>
-                <a class="leftNav" href="/resume"><div class="nav-bar li" id="resume">RESUME</div></a>
-                <a href="/"><div class="nav-bar li" style="line-height: 0;"><img class="nav-bar home-img" src="/assets/homeImage.png" alt="homeImage"></div></a>
-                <a class="rightNav" href="/coms101E-Portfolio"><div class="nav-bar li" id="coms101E-Portfolio">COMS101 PORTFOLIO</div></a>
-                <a class="rightNav" href="/eng134E-Portfolio"><div class="nav-bar li" id="eng134E-Portfolio">ENG134 PORTFOLIO</div></a>
-                <a><div class="nav-bar li">WIP</div></a>
+                <a class="leftNav" id="aboutMe" href="/aboutMe">About Me</a>
+                <a class="leftNav" id="personalProjects" href="/personalProjects">Personal Projects</a>
+                <a class="leftNav" id="resume" href="/resume">Resume</a>
+                <a id="index" href="/"><img class="nav-bar home-img" src="/assets/homeImage.png" alt="homeImage"></a>
+                <a class="rightNav" id="coms101E-Portfolio" href="/coms101E-Portfolio">COMS101 Portfolio</a>
+                <a class="rightNav" id="eng134E-Portfolio" href="/eng134E-Portfolio">ENG134 Portfolio</a>
+                <a class="rightNav" id="robinhood" href="/robinhood/robinhood">Robinhood</a>
             </nav>
         `;
     }
@@ -33,4 +33,7 @@ else if (window.location.pathname == "/coms101E-Portfolio") {
 }
 else if (window.location.pathname == "/eng134E-Portfolio") {
     document.getElementById("eng134E-Portfolio").id = 'current';
+}
+else if (window.location.pathname == "/robinhood/robinhood") {
+    document.getElementById("robinhood").id = 'current';
 }
