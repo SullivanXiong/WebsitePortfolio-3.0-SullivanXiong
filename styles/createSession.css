@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700');
+
+body.createSession {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f6f7fc;
+}
+
+.wrapperGrid {
+    display: grid;
+    padding-top: 7vh;
+    grid-template-columns: 1fr;
+    column-gap: 40vw;
+}
+
+.session {
+    width: 10vw;
+    margin-left: 45vw;
+    margin-top: 45vh;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
