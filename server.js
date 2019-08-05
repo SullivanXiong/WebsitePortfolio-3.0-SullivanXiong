@@ -7,87 +7,122 @@ const fs = require('fs');
 const startupDebugger = require('debug')('app:startup');
 const databaseDebugger = require('debug')('app:database');
 
+const TWO_HOURS = 1000 * 60 * 60 * 2
+
+/** Constants */
+const {
+    PORT = 8010,
+    NODE_ENV = 'development',
+
+    SESS_NAME = 'sessID',
+    SESS_LIFETIME = TWO_HOURS,
+    SESS_SECRET = 'a secret session ID'
+} = process.env
+
 /** Initialize the express framework as app. */
 const app = express();
+const liveVideoSession = require('./routes/liveVideoSession')
 
 /** Middleware -> functions have access to request and response object. */
 /** Middleware is basically what express initializes prior to the requests. */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/styles', express.static('styles'));
-app.use('/javascript', express.static('javascript'));
-app.use('/assets', express.static('assets'));
-app.use('/robinhood', express.static('robinhood'));
+app.use(express.static(__dirname + '/view'));
+app.use('/', liveVideoSession);
 
 /** Set the environment via console, set NODE_ENV=___ */
-console.log(`NODE_ENV=${process.env.NODE_ENV}`);
+console.log(`NODE_ENV=${NODE_ENV}`);
 if (app.get('env') === 'production') {
     console.log('Environment: Production Mode');
+    IN_PROD = true;
     // app.use();
     // console.log('');
 } else if (app.get('env') === 'development') {
     console.log('Environment: Development Mode');
+    IN_PROD = false;
 } else {
     console.log(`Using default environment...
                  Environment: Development Mode`)
+    IN_PROD = false;
 }
 
+app.use(session({
+    name : SESS_NAME,
+    resave: false,
+    saveUninitialized : false,
+    secret : SESS_SECRET,
+    cookie : {
+        maxAge : SESS_LIFETIME,
+        sameSite : true,
+        secure : IN_PROD
+    }
+}));
+
+/** PORT (acquires a dynamic port or use default 8010) */
+/** To set a port: LinuxTerminal (export PORT=____), Windows (set PORT=____) */
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 startupDebugger('Initializing WebsitePortfolio-3.0-SullivanXiong RestAPI...')
 databaseDebugger('Connecting to the database...');
 
 /** Body */
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
-    console.log('User Connected...');
+    res.sendFile(path.join(__dirname, '/view/index.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/aboutMe', (req, res) => {
-    res.sendFile(path.join(__dirname, '/aboutMe.html'))
+    res.sendFile(path.join(__dirname, '/view/aboutMe.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/coms101E-Portfolio', (req, res) => {
-    res.sendFile(path.join(__dirname, 'coms101E-Portfolio.html'))
+    res.sendFile(path.join(__dirname, '/view/coms101E-Portfolio.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/eng134E-Portfolio', (req, res) => {
-    res.sendFile(path.join(__dirname, 'eng134E-Portfolio.html'));
+    res.sendFile(path.join(__dirname, '/view/eng134E-Portfolio.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/freeWrites', (req, res) => {
-    res.sendFile(path.join(__dirname, 'freeWrites.html'))
+    res.sendFile(path.join(__dirname, '/view/freeWrites.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/peerReview', (req, res) => {
-    res.sendFile(path.join(__dirname, 'peerReview.html'))
+    res.sendFile(path.join(__dirname, '/view/peerReview.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/personalProjects', (req, res) => {
-    res.sendFile(path.join(__dirname, 'personalProjects.html'))
+    res.sendFile(path.join(__dirname, '/view/personalProjects.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/prewriteWorksheets', (req, res) => {
-    res.sendFile(path.join(__dirname, 'prewriteWorksheets.html'))
+    res.sendFile(path.join(__dirname, '/view/prewriteWorksheets.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/resume', (req, res) => {
-    res.sendFile(path.join(__dirname, 'resume.html'))
+    res.sendFile(path.join(__dirname, '/view/resume.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
-app.get('/robinhood', (req, res) => {
-    res.sendFile(path.join(__dirname, '/robinhood/robinhood.html'))
+app.get('/robinhood/robinhood', (req, res) => {
+    res.sendFile(path.join(__dirname, '/view/robinhood/robinhood.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/createSession', (req, res) => {
-    res.sendFile(path.join(__dirname, 'createSession.html'))
+    res.sendFile(path.join(__dirname, '/view/createSession.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
 
 app.get('/liveVideoSession', (req, res) => {
-    res.sendFile(path.join(__dirname, 'liveVideoSession.html'))
+    res.sendFile(path.join(__dirname, '/view/liveVideoSession.html'));
+    console.log(`User Connected at ${req.url}...`);
 });
-
-/** PORT (acquires a dynamic port or use default 8010) */
-/** To set a port: LinuxTerminal (export PORT=____), Windows (set PORT=____) */
-const port = process.env.PORT || 8010;
-
-app.listen(port, () => console.log(`Listening on port ${port}...`));
