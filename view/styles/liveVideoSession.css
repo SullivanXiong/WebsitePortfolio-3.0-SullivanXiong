@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700');
+
+body.liveVideoSession {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f6f7fc;
+}
+
+.wrapperGrid {
+    display: grid;
+    padding-top: 8vh;
+    grid-template-columns: 1fr;
+    column-gap: 40vw;
+    width: 80vw;
+    margin-left: 10vw;
+}

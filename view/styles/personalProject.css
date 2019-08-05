@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700');
+
+body.pp {
+    margin: 0;
+    width: 100vw;
+    background: white;
+    font-family: 'Oswald', sans-serif;
+    background-size: cover;
+}
+
+div.wrapperGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10vw;
+    grid-row-gap: 75px;
+    font-family: 'Oswald', sans-serif;
+    margin: 10vh 10vw;
+}
+
+div div.project {
+    display: inline-block;
+}
+
+.project img {
+    width: 4vw;
+    height: 4vw;
+    border: 2px solid black;
+    margin: 0;
+    display: inline-block;
+    border-radius: 100%;
+}
+
+div.imgBar {
+    width: 30vw;
+    height: 3px;
+    background: black;
+    display: block;
+    position: relative;
+    right: 0.4vw;
+    content: '';
+}
+
+div div.projectName {
+    width: 30vw;
+    display: inline-block;
+    position: relative;
+    bottom: 2.5vw;
+}
+
+@media (max-width: 764px) {
+    div.imgBar {
+        width: 29vw;
+        height: 3px;
+        background: black;
+        display: block;
+        position: relative;
+        right: 0.4vw;
+        content: '';
+    }
+    
+    div div.projectName {
+        width: 29vw;
+        display: inline-block;
+        position: relative;
+        bottom: 2.5vw;
+    }
+}
+
+div.projectName a {
+    color: black;
+    font-size: 2vw;
+    text-decoration: none;
+}
+
+
+div.projectName a:hover {
+    color: rgba(125, 125, 125, 0.75);
+}
+
+div.projectName a:active {
+    color: rgba(125, 125, 125, 0.75);
+}
+
+ul.projectDescription {
+    padding-left: 80px;
+    margin: 0;
+}
+
+ul.projectDescription li{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 450px) {
+    ul.projectDescription {
+        padding-left: 10vw;
+        margin: 0;
+    }
+    
+    ul.projectDescription li{
+        font-size: 4vw;
+        margin-bottom: 10px;
+    }
+}
