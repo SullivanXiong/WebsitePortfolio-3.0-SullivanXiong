@@ -1,0 +1,32 @@
+.body {
+    margin: 0;
+    width: 100vw;
+    height: 92.6vh;
+    background: url('../../assets/resumeBackgroundImage.jpg');
+    background-size: 100vw 100vh;
+}
+
+.resumeGrid {
+    margin-top: 7vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100vw;
+}
+
+.pdfContainer {
+    height: 140vh;
+}
+
+@media (max-width: 732px) {
+    .body {
+        background-size: 150vw 100vh;
+        background-position-x: -25vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .body {
+        background-size: 150vw 100vh;
+        background-position-x: -30vw;
+    }
+}

@@ -5,16 +5,32 @@
         <meta char="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <link rel="stylesheet" type="text/css" href="styles/index.css">
-        <link rel="stylesheet" type="text/css" href="styles/nav-bar.css">
-        <link rel="stylesheet" type="text/css" href="styles/createSession.css">   
+        <link rel="stylesheet" type="text/css" href="/styles/index.css">
+        <link rel="stylesheet" type="text/css" href="/styles/nav-bar.css">
+        <link rel="stylesheet" type="text/css" href="/styles/createSession.css">   
     </head>
 
     <body class="createSession">
         <nav-bar></nav-bar>
 
         <div class="wrapperGrid">
-            <button class="session" type="button"><a href="/liveVideoSession">Create a video session</a></button>
+            <form action="/createSession" method="POST">
+                <div class="formWrapperGrid">
+                    <div class="inputWrapperGrid">
+                        <p style="display:inline-block">Session Title:</p>
+                        <input style="display:inline-block" type="text" id="sessionTitle" name="sessionTitle" placeholder="Session Title">
+                    </div>
+                    <div class="inputWrapperGrid">
+                        <p style="display:inline-block">Your Secret Name:</p>
+                        <input style="display:inline-block" type="text" maxlength="15" id="name" name="name" placeholder="Secret Name" required>
+                    </div>
+                    <div class="inputWrapperGrid">
+                        <p style="display:inline-block">Session Users Capacity: </p>
+                        <input style="display:inline-block" type="number" min="2" id="sessionUserLimit" name="sessionUserLimit" placeholder="Session Users Capacity" required>
+                    </div>
+                </div>
+                <input class="session" type="submit" value="Create a video session">
+            </form>
         </div>
     </body>
     <script src="/javascript/index.js"></script>

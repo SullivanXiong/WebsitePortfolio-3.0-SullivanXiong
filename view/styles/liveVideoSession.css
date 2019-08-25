@@ -1,17 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
 body.liveVideoSession {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background: #f6f7fc;
+    background: rgb(15, 14, 17);
 }
 
-.wrapperGrid {
+#title {
+    height: 7vh;
+    width: 100vw;
+    color: #ffffff;
+    font-size: 1.25vh;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.mainWrapperGrid {
     display: grid;
-    padding-top: 8vh;
-    grid-template-columns: 1fr;
-    column-gap: 40vw;
-    width: 80vw;
-    margin-left: 10vw;
+    grid-template-columns: 15vw 58vw 23vw;
+    column-gap: 2vw;
+    height: 93vh;
+}
+
+.wrapperGridLeft {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5vh;
+    column-gap: 1vw;
+    row-gap: 2vw;
+    font-size: .5vh;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(25, 23, 28);
+    border-right: .25px rgb(218, 216, 222) solid;
+}
+
+.wrapperGridMid {
+
+}
+
+.wrapperGridRight {
+    background: rgb(30, 32.5, 35);
+    border-left: .25px rgb(218, 216, 222) solid;
 }

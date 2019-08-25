@@ -5,20 +5,30 @@
         <meta char="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-        <link rel="stylesheet" type="text/css" href="styles/index.css">
-        <link rel="stylesheet" type="text/css" href="styles/nav-bar.css">
-        <link rel="stylesheet" type="text/css" href="styles/liveVideoSession.css">
+        <link rel="stylesheet" type="text/css" href="/styles/index.css">
+        <link rel="stylesheet" type="text/css" href="/styles/liveVideoSession.css">
         <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-        <script defer src="routes/watch.js"></script>
+        <script defer src="/routes/watch.js"></script>
     </head>
     
     <body class="liveVideoSession">
-        <nav-bar></nav-bar>
+        <h2 id="title"></h2>
         
-        <div class="wrapperGrid">
-            <input type="text" id="url" name="url" placeholder="YouTube Video URL" value="">
-            <input type="submit" value="Play This Video" onclick=iframeOnClick()>
-            <div id="player"></div>
+        <div class="mainWrapperGrid">
+            <div class="wrapperGridLeft">
+                <section class="section"></section>                
+                <section class="section" id="adminName"></section>
+                <section class="section"></section>
+                <section class="section" id="capacityNumber"></section>
+            </div>
+            <div class="wrapperGridMid">
+                <input type="text" id="url" name="url" placeholder="YouTube Video URL" value="">
+                <input type="submit" value="Play This Video" onclick=iframeOnClick()>
+                <div style="display: block;" id="player"></div>
+            </div>
+            <div class="wrapperGridRight">
+
+            </div>
         </div>
         <script src="https://www.youtube.com/player_api"></script>
     </body>

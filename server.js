@@ -1,9 +1,7 @@
 /** Modules. */
 const express = require("express");
 const session = require("express-session")
-const Joi = require("Joi");
 const path = require('path');
-const fs = require('fs');
 const startupDebugger = require('debug')('app:startup');
 const databaseDebugger = require('debug')('app:database');
 
@@ -22,14 +20,25 @@ const {
 /** Initialize the express framework as app. */
 const app = express();
 const liveVideoSession = require('./routes/liveVideoSession')
+const createSession = require('./routes/createSession')
 
 /** Middleware -> functions have access to request and response object. */
 /** Middleware is basically what express initializes prior to the requests. */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === "OPTIONS") {
+        res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+        return res.status(200).json({});
+    }
+    next();
+});
 
 app.use(express.static(__dirname + '/view'));
 app.use('/', liveVideoSession);
+app.use('/', createSession);
 
 /** Set the environment via console, set NODE_ENV=___ */
 console.log(`NODE_ENV=${NODE_ENV}`);
@@ -75,6 +84,8 @@ app.get('/', (req, res) => {
 app.get('/aboutMe', (req, res) => {
     res.sendFile(path.join(__dirname, '/view/aboutMe.html'));
     console.log(`User Connected at ${req.url}...`);
+    var ip = req.ip;
+    console.log(`Users's ip: ${ip}`);
 });
 
 app.get('/coms101E-Portfolio', (req, res) => {
@@ -114,15 +125,5 @@ app.get('/resume', (req, res) => {
 
 app.get('/robinhood/robinhood', (req, res) => {
     res.sendFile(path.join(__dirname, '/view/robinhood/robinhood.html'));
-    console.log(`User Connected at ${req.url}...`);
-});
-
-app.get('/createSession', (req, res) => {
-    res.sendFile(path.join(__dirname, '/view/createSession.html'));
-    console.log(`User Connected at ${req.url}...`);
-});
-
-app.get('/liveVideoSession', (req, res) => {
-    res.sendFile(path.join(__dirname, '/view/liveVideoSession.html'));
     console.log(`User Connected at ${req.url}...`);
 });

@@ -1,0 +1,76 @@
+{
+  "videoSessions": [
+    {
+      "creationID": 0,
+      "status": "live",
+      "title": "asdf",
+      "uniqueID": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "admin": "thisisjusthepre",
+      "sessionUserLimit": "3",
+      "liveUsers": [
+        "thisisjusthepre"
+      ],
+      "logs": {
+        "usersLog": [
+          "thisisjusthepre"
+        ],
+        "videosLog": [],
+        "chatLog": []
+      }
+    },
+    {
+      "creationID": 1,
+      "status": "live",
+      "title": "Memes Galore",
+      "uniqueID": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+      "admin": "powerbyrice",
+      "sessionUserLimit": "7",
+      "liveUsers": [
+        "powerbyrice"
+      ],
+      "logs": {
+        "usersLog": [
+          "powerbyrice"
+        ],
+        "videosLog": [],
+        "chatLog": []
+      }
+    },
+    {
+      "creationID": 2,
+      "status": "live",
+      "title": "asdf",
+      "uniqueID": "1048f03db5d45f654b955eae20d84b72673680fb13b318e7da22e8dce58df21c",
+      "admin": "powerbyrice7",
+      "sessionUserLimit": "7",
+      "liveUsers": [
+        "powerbyrice7"
+      ],
+      "logs": {
+        "usersLog": [
+          "powerbyrice7"
+        ],
+        "videosLog": [],
+        "chatLog": []
+      }
+    },
+    {
+      "creationID": 3,
+      "status": "live",
+      "title": "ThisIsLegitTitle",
+      "uniqueID": "96c30b060682d03f4d8e434353415f200773672194cb7bebf19348bb17bfbe66",
+      "admin": "powerbyrice7",
+      "sessionUserLimit": "7",
+      "liveUsers": [
+        "powerbyrice7"
+      ],
+      "logs": {
+        "usersLog": [
+          "powerbyrice7"
+        ],
+        "videosLog": [],
+        "chatLog": []
+      }
+    }
+  ]
+}

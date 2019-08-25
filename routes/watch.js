@@ -7,8 +7,8 @@ socket.on("watch", data => {
 
 socket.on("video", data => {
     var player = new YT.Player('player', {
-        height: '315',
-        width: '560',
+        height: '25vh',
+        width: '100%',
         videoId: data,
         events: {
             'onStateChange': onPlayerStateChange
@@ -44,8 +44,8 @@ function iframeOnClick() {
     var parsedURL = parse(url);
     document.getElementById("url").value = "";
     var player = new YT.Player('player', {
-        height: '315',
-        width: '560',
+        height: '66%',
+        width: '100%',
         videoId: parsedURL,
         events: {
             'onStateChange': onPlayerStateChange
@@ -67,3 +67,16 @@ function iframeOnClick() {
     });
     socket.emit("watch", {videoId: parsedURL})
 }
+
+// Initialize data from database
+var title = $("#title");
+var admin = $("#adminName");
+var userCapacity = $("#capacityNumber");
+
+$.get(window.location.href, (data) => {
+    console.log(data);
+    title.text(data.title);
+    admin.text(data.admin);
+    userCapacity.text(data.sessionUserLimit);
+});
+
