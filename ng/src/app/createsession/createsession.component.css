@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700');
+
+.body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f6f7fc;
+}
+
+.wrapperGrid {
+    display: grid;
+    padding-top: 7vh;
+    grid-template-columns: 1fr;
+    column-gap: 40vw;
+}
+
+@media (orientation: landscape) {
+    .session {
+        width: 15vw;
+        margin-left: 42.5vw;
+        margin-top: 40vh;
+        padding: 0;
+        border: 1px solid black;
+        border-radius: 12px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.5vw;
+    }
+
+    .formWrapperGrid {
+        display: grid;
+        grid-row-gap: 2.5vh;
+    }
+}
+
+@media (orientation: portrait) {
+    .session {
+        width: 60vw;
+        margin-left: 20vw;
+        margin-top: 50vh;
+        padding: 0;
+        border: 1px solid black;
+        border-radius: 12px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 6vw;
+    }
+
+    .formWrapperGrid {
+        display: grid;
+        grid-row-gap: 2.5vh;
+        grid-template-columns: 1fr 1fr
+    }
+}

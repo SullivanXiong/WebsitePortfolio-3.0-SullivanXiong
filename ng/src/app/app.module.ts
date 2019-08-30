@@ -12,6 +12,7 @@ import { SchooleportfoliosComponent } from './schooleportfolios/schooleportfolio
 import { RobinhoodComponent } from './robinhood/robinhood.component';
 import { CreatesessionComponent } from './createsession/createsession.component';
 import { HomeComponent } from './home/home.component';
+import { LiveVideoSessionComponent } from './createsession/live-video-session/live-video-session.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     RobinhoodComponent,
     CreatesessionComponent,
     HomeComponent,
+    LiveVideoSessionComponent,
   ],
   imports: [
     BrowserModule,

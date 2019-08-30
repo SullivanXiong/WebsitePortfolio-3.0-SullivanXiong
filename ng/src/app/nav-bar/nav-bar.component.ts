@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as  $  from 'jquery';
 
 @Component({
   selector: 'nav-bar',
@@ -14,12 +15,12 @@ export class NavBarComponent implements OnInit {
     var dropDownButtonFlag = 0;
 
     $(window).resize(() => {
-        if ($(this).width() <= 732) {
+        if ($(window).width() <= 732) {
             dropDownButtonFlag = 0;
             $("div.otherContents").css("display", "none");
             $("button.dDMIcon").css("border", "0").css("background-color", "rgba(0, 0, 0)");
         }
-        else if ($(this).width() > 732) {
+        else if ($(window).width() > 732) {
             dropDownButtonFlag = 1;
             $("div.otherContents").css("display", "grid");
         }

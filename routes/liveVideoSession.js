@@ -26,20 +26,13 @@ router.get('/liveVideoSession', (req, res) => {
     res.send(404);
 });
 
-router.get('/liveVideoSession/:uid', (req, res, next) => {
+router.get('/liveVideoSession/:uid', (req, res) => {
     for (var i = 0; i < sessions.length; i++) {
         if (sessions[i].uniqueID == req.params.uid) {
             res.json(sessions[i]);
-            next()
         }
     }
     res.status(404);
-    next()
-});
-
-router.get('/liveVideoSession/:uid', (req, res) => {
-    console.log(`User Connected at ${req.url}...`);
-    res.sendFile(path.join(__dirname, '../view/liveVideoSession.html'));
 });
 
 io.on('connection', (socket) => {

@@ -1,3 +1,21 @@
-<p>
-  createsession works!
-</p>
+<div class="body">
+  <div class="wrapperGrid">
+      <form (ngSubmit)="submitSession()" action="/createSession" method="POST">
+          <div class="formWrapperGrid">
+              <div class="inputWrapperGrid">
+                  <p style="display:inline-block">Session Title:</p>
+                  <input style="display:inline-block" type="text" id="sessionTitle" name="sessionTitle" placeholder="Session Title">
+              </div>
+              <div class="inputWrapperGrid">
+                  <p style="display:inline-block">Your Secret Name:</p>
+                  <input style="display:inline-block" type="text" maxlength="15" id="name" name="name" placeholder="Secret Name" required>
+              </div>
+              <div class="inputWrapperGrid">
+                  <p style="display:inline-block">Session Users Capacity: </p>
+                  <input style="display:inline-block" type="number" min="2" id="sessionUserLimit" name="sessionUserLimit" placeholder="Session Users Capacity" required>
+              </div>
+          </div>
+          <input class="session" type="submit" value="Create a video session">
+      </form>
+  </div>
+</div>
