@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-createsession',
@@ -9,13 +8,15 @@ import 'rxjs/add/operator/map';
 })
 export class CreatesessionComponent implements OnInit {
 
-  constructor(private http: HttpClient, Session: VideoSession) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  submitSession() {
-    this.http.post("/createSession", Session).subscribe(data => {console.log(data)});
-  }
+  // submitSession() {
+  //   this.http.post("/createSession").subscribe(data => {console.log(data)});
+  // }
 
+  // put on form in the html file
+  // (ngSubmit)="submitSession()"
 }
