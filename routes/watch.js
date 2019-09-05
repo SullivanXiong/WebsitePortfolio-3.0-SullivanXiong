@@ -1,5 +1,5 @@
 // socket code
-const socket = io('http://localhost:3000')
+const socket = io('https://localhost:3000')
 
 socket.on("watch", data => {
     console.log(data)
